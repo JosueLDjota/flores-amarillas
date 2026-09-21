@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-script: 'Pinyon Script', cursive;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #07090e;
+    color: #e6e9f0;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+
+  /* Custom smooth scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(7, 9, 14, 0.8);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(234, 179, 8, 0.3);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(234, 179, 8, 0.6);
+  }
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+/* Cinematic Glow & Lighting */
+.gold-glow {
+  filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.45));
+}
+
+.gold-glow-lg {
+  filter: drop-shadow(0 0 35px rgba(251, 191, 36, 0.6));
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #fff7d6 0%, #fde047 35%, #eab308 70%, #ca8a04 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-silver-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism cards */
+.glass-panel {
+  background: rgba(13, 17, 28, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(234, 179, 8, 0.15);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 20px -5px rgba(234, 179, 8, 0.05);
+}
+
+.glass-panel-active {
+  background: rgba(20, 24, 38, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(250, 204, 21, 0.45);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 30px 2px rgba(234, 179, 8, 0.2);
+}
+
+/* Keyframes for organic natural animations */
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(-1.5deg);
+  }
+  50% {
+    transform: rotate(1.5deg);
+  }
+}
+
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-sway {
+  animation: sway 6s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.animate-gentle-float {
+  animation: gentle-float 5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Vignette effect */
+.vignette-overlay {
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 40%, rgba(5, 7, 12, 0.85) 100%);
+}
